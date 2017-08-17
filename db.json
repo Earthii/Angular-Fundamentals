@@ -1,0 +1,62 @@
+{
+  "passengers": [
+    {
+      "id": 0,
+      "fullname": "Eric Xiao ",
+      "checkedIn": true,
+      "checkedInDate": 1232312311,
+      "children": [
+        {
+          "name": "James",
+          "age": 2
+        },
+        {
+          "name": "Sally",
+          "age": 2
+        },
+        {
+          "name": "Steve",
+          "age": 2
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "fullname": "Larry James",
+      "checkedIn": false,
+      "children": [
+        {
+          "name": "James",
+          "age": 2
+        },
+        {
+          "name": "Sally",
+          "age": 2
+        },
+        {
+          "name": "Steve",
+          "age": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullname": "Lei Huang",
+      "checkedIn": false,
+      "children": [
+        {
+          "name": "James",
+          "age": 2
+        },
+        {
+          "name": "Sally",
+          "age": 2
+        },
+        {
+          "name": "Steve",
+          "age": 2
+        }
+      ]
+    }
+  ]
+}

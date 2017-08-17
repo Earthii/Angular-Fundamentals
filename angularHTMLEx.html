@@ -1,0 +1,54 @@
+<h1>
+    <!--Interpolation-->
+    Hello World {{title}}
+</h1>
+<!--Property setting-->
+<h1 [innerHTML]="title"></h1>
+<!--One way Binding-->
+<input type="text" [ngModel]="name" (ngModelChange)="handleChange($event)"> <h3 *ngIf="name">Input value : {{name}}</h3>
+<!--Two way binding-->
+<input type="text" [(ngModel)]="name"> <h3 *ngIf="name">Input value : {{name}}</h3>
+<!--Template Ref -->
+<input type="text" #username><button (click)="handleClick(username.value)">Get Value</button>
+<div>
+    <h3>Airline passengers</h3>
+    <h4>[class.checked-in] = boolean</h4>
+    <ul>
+        <li class="passenger" *ngFor="let passenger of passengers;  let i = index;">
+            <span class="status" [class.checked-in]="passenger.checkedIn"></span>
+            {{passenger.id}} : {{passenger.fullname}} {{i}} {{passenger.checkedIn}}
+        </li>
+    </ul>
+    <h4>
+        [ngClass] = {{ '{\"class\" : condition }'}}
+    </h4>
+    <ul>
+        <li class="passenger" *ngFor="let passenger of passengers;  let i = index;">
+            <span class="status" [ngClass]="{'checked-in': passenger.checkedIn, 'checked-out': !passenger.checkedIn}"></span>
+            {{passenger.id}} : {{passenger.fullname}} {{i}} {{passenger.checkedIn}}
+        </li>
+    </ul>
+    <h4>
+        [style.backgroundColor] = (boolean? true:false)
+    </h4>
+    <ul>
+        <li class="passenger" *ngFor="let passenger of passengers;  let i = index;">
+            <span class="status" [style.backgroundColor]="(passenger.checkedIn? 'green': 'red')"></span>
+            <p>
+                {{passenger | json}}
+            </p>
+        </li>
+    </ul>
+    <h4>
+        [ngStyle] = {{ '{ {backgroundColor: (boolean? true:false) }'}}
+    </h4>
+    <ul>
+        <li class="passenger" *ngFor="let passenger of passengers;  let i = index;">
+            <span class="status" [ngStyle]="{backgroundColor: (passenger.checkedIn? 'green': 'red')}"></span>
+            {{i}}  : {{passenger.fullname}} {{passenger.checkedIn? (passenger.checkedInDate | date: 'yMMMMd' | uppercase ): "Not checked in"}}
+            <!--Safe Navigation-->
+            Has {{passenger.children?.length || 0}} childrens
+
+        </li>
+    </ul>
+</div>
