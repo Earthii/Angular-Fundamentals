@@ -3,6 +3,9 @@ import {Passenger} from "./models/passenger.interface";
 import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
 import 'rxjs/add/operator/toPromise';
 
 
@@ -27,7 +30,7 @@ export class PassengerDashboardService {
         let options = new RequestOptions({
             headers : headers
         })
-        return this.http.put(`${PASSENGER_API}/${passenger.id}`, passenger, options).map((response : Response) => response.json())
+        return this.http.put(`${PASSENGER_API}/${passenger.id}`, passenger, options).map((response : Response) => response.json()).catch((error:any) => Observable.throw(error.json()));
     }
 
     removePassenger(passenger : Passenger) :Observable<Passenger> {

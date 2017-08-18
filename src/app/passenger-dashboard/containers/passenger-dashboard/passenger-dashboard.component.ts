@@ -50,7 +50,8 @@ export class PassengerDashboardComponent implements OnInit{
                     passenger = Object.assign({}, passenger, event);
                 }
                 return passenger;
-            })
+            }, (response) => {})
+
         })
     }
 
