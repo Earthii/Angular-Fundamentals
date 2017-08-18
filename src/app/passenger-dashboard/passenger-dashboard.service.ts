@@ -3,6 +3,8 @@ import {Passenger} from "./models/passenger.interface";
 import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+
 
 const PASSENGER_API: string = 'http://localhost:3000/passengers';
 
@@ -13,9 +15,9 @@ export class PassengerDashboardService {
 
     }
 
-    getPassengers(): Observable<Passenger[]> {
+    getPassengers(): Promise<Passenger[]> {
 
-        return this.http.get(PASSENGER_API).map((response : Response) => response.json())
+        return this.http.get(PASSENGER_API).toPromise().then((response : Response) => response.json())
     }
 
     updatePassenger(passenger : Passenger): Observable<Passenger> {
