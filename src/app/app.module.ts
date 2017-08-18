@@ -6,16 +6,22 @@ import {RouterModule, Routes} from '@angular/router'
 
 import { PassengerDashboardModule } from './passenger-dashboard/passenger.dashboard.module'
 
-import { AppComponent } from './app.component'
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home.component'
 
 
-const routes: Routes = [{
-
-}]
+const routes: Routes = [
+    {
+        path : '',
+        component : HomeComponent,
+        pathMatch:'full'
+    }
+]
 
 @NgModule({
   declarations : [
-      AppComponent
+      AppComponent,
+      HomeComponent,
   ],
   bootstrap: [
       AppComponent
@@ -24,7 +30,7 @@ const routes: Routes = [{
       BrowserModule,
       CommonModule,
       FormsModule,
-      RouterModule.forRoot(routes)),
+      RouterModule.forRoot(routes),
 
       PassengerDashboardModule
   ]
