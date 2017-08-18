@@ -1,12 +1,10 @@
+import {Baggage} from './baggage.interface'
+
 export interface Passenger {
     id: number;
     fullname: string;
     checkedIn: boolean;
-    checkedInDate ?: number
-    children?: Child[];
-}
-
-export interface Child {
-    name: string;
-    age: number;
+    handicap?: boolean;
+    checkedInDate ?: number | null
+    baggage: string
 }

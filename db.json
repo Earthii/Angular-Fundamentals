@@ -5,58 +5,20 @@
       "fullname": "Eric Xiao ",
       "checkedIn": true,
       "checkedInDate": 1232312311,
-      "children": [
-        {
-          "name": "James",
-          "age": 2
-        },
-        {
-          "name": "Sally",
-          "age": 2
-        },
-        {
-          "name": "Steve",
-          "age": 2
-        }
-      ]
+      "baggage": ""
     },
     {
+      "fullname": "William Tomson",
       "id": 1,
-      "fullname": "Larry James",
       "checkedIn": false,
-      "children": [
-        {
-          "name": "James",
-          "age": 2
-        },
-        {
-          "name": "Sally",
-          "age": 2
-        },
-        {
-          "name": "Steve",
-          "age": 2
-        }
-      ]
+      "handicap": true,
+      "baggage": "hand-only"
     },
     {
       "id": 2,
       "fullname": "Lei Huang",
       "checkedIn": false,
-      "children": [
-        {
-          "name": "James",
-          "age": 2
-        },
-        {
-          "name": "Sally",
-          "age": 2
-        },
-        {
-          "name": "Steve",
-          "age": 2
-        }
-      ]
+      "baggage": ""
     }
   ]
 }
